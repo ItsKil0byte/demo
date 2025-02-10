@@ -10,16 +10,22 @@ import java.util.List;
 @Service
 public class PostService {
 
-    private List<Post> posts = new ArrayList<>();
+    private List<Post> posts;
 
     {
-        posts.add(new Post("Мой первый пост :)", new Date(), 7));
-        posts.add(new Post("В интернете весело :)", new Date(), 4));
-        posts.add(new Post("Я люблю Java.", new Date(), 11));
+        Post first = new Post(0L, "Мой первый пост :)", new Date());
+        Post second = new Post(1L, "В интернете весело :)", new Date());
+        Post third = new Post(2L, "Я люблю Java.", new Date());
+
+        first.setLikes(11);
+        second.setLikes(4);
+        third.setLikes(7);
+
+        posts = new ArrayList<>(List.of(first, second, third));
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date(), 0));
+        posts.add(new Post((long) posts.size(), text, new Date()));
     }
 
     public List<Post> listAllPosts() {

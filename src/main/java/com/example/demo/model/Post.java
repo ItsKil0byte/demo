@@ -6,15 +6,24 @@ public class Post {
     private String text;
     private Integer likes;
     private Date creationDate;
+    private Long id;
 
-    public Post(String text, Date date, Integer likes) {
+    public Post(Long id, String text, Date creationDate) {
+        this.id = id;
         this.text = text;
-        this.creationDate = date;
-        this.likes = likes;
+        this.creationDate = creationDate;
     }
 
     public Integer getLikes() {
         return likes;
+    }
+
+    public void setLikes(Integer likes) {
+        this.likes = likes;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getText() {
