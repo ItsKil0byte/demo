@@ -10,9 +10,9 @@ import java.util.List;
 public class PostService {
 
     public List<Post> listAllPosts() {
-        Post first = new Post("Мой первый пост :)");
-        Post second = new Post("В интернете весело :)");
-        Post third = new Post("Продам героин.");
+        Post first = new Post("Мой первый пост :)", 7);
+        Post second = new Post("В интернете весело :)", 4);
+        Post third = new Post("Я люблю Java.", 11);
 
         List<Post> posts = new ArrayList<>();
         posts.add(first);
